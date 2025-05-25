@@ -1,0 +1,91 @@
+
+    * {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;  
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e4f2fc;
+    }
+    
+    .Titel {
+      text-align: left
+    }
+
+    footer {
+      background-color: #b3d9db;
+      border: 1px solid #89a8aa;
+      color: rgb(255, 255, 255);
+      padding: 100px;
+      text-align: center;
+    }
+
+    header {
+      background-color: #e4f2fc ;
+      color: #e4f2fc;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      border-radius: 10px;
+      border: 2px solid #89a8aa;
+      background-color: #b3d9db;
+      padding: 15px;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+      flex-direction: column;  
+    }
+
+    main {
+      border-radius: 10px;
+      border: 2px solid #89a8aa;
+      background-color: #b3d9db;
+      flex: 3;
+      padding: 20px;
+      background-color: #b3d9db;
+    }
+
+    aside {
+      flex: 1;
+      padding: 20px;
+      background-color: #b3d9db;
+      border-radius: 10px;
+      border: 2px solid #89a8aa;
+    }
+
+    footer {
+      margin-top: 100px;
+    }
+
+
+    .v-line {
+      width: 1px;
+      background-color: #aaa;
+      height: 100%;
+      margin: 0 20px;
+    }
+
+    .products-alt {
+      display: flex;
+    }
+
+    .product {
+      flex: 1;
+      padding: 20px;
+      border-left: 1px solid #ccc;
+    }
+
+    .product:first-child {
+      border-left: none;
+    }
