@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.header, .footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Layout thuis */
+body.home-layout {
+  background-color: #e0f7fa;
+  color: #006064;
+}
+
+body.home-layout .header {
+  background-color: #b2ebf2;
+}
+
+body.home-layout .footer {
+  background-color: #4dd0e1;
+}
+
+/* Layout zakelijk */
+body.business-layout {
+  background-color: #f3e5f5;
+  color: #4a148c;
+}
+
+body.business-layout .header {
+  background-color: #ce93d8;
+}
+
+body.business-layout .footer {
+  background-color: #ba68c8;
+}
+
+.safe {
+      color: rgb(0, 140, 255); /* Blue */
+      font-weight: bold;
+       font-size: 27px;
+}
+
+.haven {
+      color: #00115a; /*Light blue */
+      font-weight: bold;
+      font-size: 27px;
+}
+
+@media (max-width: 600px) {
+  .safe {
+    font-size: 27px; /* Adjust for smaller screens */
+  }
+
+  .haven {
+    font-size: 27px; /* Adjust for smaller screens */
+  }
+}
+
+.carousel-item img {
+  height: 67vh;
+  object-fit: fill;
+}
+
+.pro-box {
+  background: linear-gradient(135deg, #fff8e1, #fffde7);
+  border: 3px solid gold;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  max-width: 90%;
+  transition: box-shadow 0.3s ease;
+}
+
+.pro-box:hover {
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.8);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button {
+  width: 150px;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.role-content {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}

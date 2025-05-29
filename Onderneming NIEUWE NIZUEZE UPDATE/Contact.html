@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+    }
+
+    body {
+      background-color: #f4f7fc;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    section {
+      padding: 45px 0;
+      padding-top: 70px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .contact-info-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 30%;
+    }
+
+    .contact-info-icon {
+      font-size: 2rem;
+      color: #2196f3;
+      margin-bottom: 15px;
+    }
+
+    .contact-info-content h4 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .contact-info-content p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .contact-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #222;
+      text-align: center;
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-box input,
+    .input-box textarea {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .input-box textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    .input-box input:focus,
+    .input-box textarea:focus {
+      border-color: #2196f3;
+    }
+
+    .input-box input:focus ~ span,
+    .input-box textarea:focus ~ span {
+      top: -10px;
+      font-size: 12px;
+      color: #2196f3;
+    }
+
+    .input-box span {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: #888;
+      transition: 0.3s ease-in-out;
+    }
+
+    .input-box input:valid ~ span,
+    .input-box textarea:valid ~ span {
+      top: -10px;
+      font-size: 12px;
+      color: #2196f3;
+    }
+
+    .input-box input[type="submit"] {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    .input-box input[type="submit"]:hover {
+      background-color: #1976d2;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2196f3;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb3d5E5h6ra06pQybuM1QZmYazNx3zxZl00Kn9c5QXyPT2hVx" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8Fq8o6e2R6cmeq8DEqxD5Utmd9gQgZ1vXn6weD0zVK7Q7p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar -->
+<nav class="navbar fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+    <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><span class="safe">SAFE</span><span class="haven">HAVEN</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="index.html"><span class="safe">SAFE</span><span class="haven">HAVEN</span></a></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Consument.html" role="button" data-bs-toggle="dropdown" aria-expanded="true">Consument</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" style="color: gold;">Pro</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Gratis Proefversie</a></li>
+              <li><a class="dropdown-item" href="#">Standaard</a></li>
+              <li><a class="dropdown-item" href="#">Premium</a></li>
+              <li><a class="dropdown-item" href="#">Advanced</a></li>
+              <li><a class="dropdown-item" href="#">Ultimate</a></li>
+
+            </ul>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="Business.html">Business</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="Contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="Over Ons.html">Over Ons</a></li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+</nav>
+
+  <section>
+    <div class="section-header">
+      <div class="container">
+        <h2>Neem Contact met Ons op</h2>
+        <p>We horen graag van je! Of je nu vragen hebt, feedback wilt geven, of hulp nodig hebt, ons team staat klaar om te helpen. Vul het onderstaande formulier in, en we nemen zo snel mogelijk contact met je op.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Adress</h4>
+              <p>Avenue Louise 152,<br/> 1050 Brussel, <br/>België</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Telefoonnummer</h4>
+              <p>+32 405 87 51 33</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Email</h4>
+              <p>Support@SafeHaven.org</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form action="" id="contact-form">
+            
+            <div class="input-box">
+              <input type="text" required="true" name="name">
+              <span>Naam</span>
+            </div>
+
+            <div class="input-box">
+              <input type="email" required="true" name="email">
+              <span>Email</span>
+            </div>
+
+            <div class="input-box">
+              <textarea required="true" name="message"></textarea>
+              <span>Schrijf Uw Bericht...</span>
+            </div>
+
+            <div class="input-box">
+              <input type="submit" value="Send" name="">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <div>© 2025 Thuisbedrijf</div>
+  </section>
+
+  <!-- Optional Bootstrap JS and Icons -->
+  
+  <script>
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent the form from submitting
+
+    // Show a notification
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = "Je bericht is succesvol verzonden!";
+
+    document.body.appendChild(notification);
+
+    // Remove the notification after 3 seconds
+    setTimeout(() => {
+      notification.remove();
+    }, 3000);
+  });
+</script>
+</body>
+</html>
