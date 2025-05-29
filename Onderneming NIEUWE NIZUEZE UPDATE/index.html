@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Wisselaar</title>
+  <link rel="stylesheet" href="style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .layout {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .header, .footer {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Thuis layout */
+    .home-layout {
+      background-color: #e0f7fa;
+      color: #006064;
+    }
+
+    .home-layout .header {
+      background-color: #b2ebf2;
+    }
+
+    .home-layout .footer {
+      background-color: #4dd0e1;
+    }
+
+    /* Zakelijke layout */
+    .business-layout {
+      background-color: #f3e5f5;
+      color: #4a148c;
+    }
+
+    .business-layout .header {
+      background-color: #ce93d8;
+    }
+
+    .business-layout .footer {
+      background-color: #ba68c8;
+    }
+
+    .active {
+      display: flex;
+    }
+
+        .feature-box {
+      flex: 1;  /* Makes all boxes grow and have equal width */
+      min-height: 300px;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f8f9fa;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-box i {
+      font-size: 3rem;
+      color: #007bff;
+    }
+
+    .feature-box h5 {
+      margin-top: 10px;
+      font-size: 1.25rem;
+    }
+
+    /* Optional: Add space between the boxes */
+    .feature-box-container {
+      display: flex;
+      align-items: stretch; 
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .feature-box-container .col-md-2 {
+      flex: 1;
+      max-width: 200px;
+      text-align: center;
+    }
+
+        #fadeImage {
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+<nav class="navbar fixed-top bg-body-tertiary">
+  <div class="container-fluid">
+    <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><span class="safe">SAFE</span><span class="haven">HAVEN</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a class="navbar-brand" href="index.html"><span class="safe">SAFE</span><span class="haven">HAVEN</span></a></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Consument.html" role="button" data-bs-toggle="dropdown" aria-expanded="true">Consument</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" style="color: gold;">Pro</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Gratis Proefversie</a></li>
+              <li><a class="dropdown-item" href="#">Standaard</a></li>
+              <li><a class="dropdown-item" href="#">Premium</a></li>
+              <li><a class="dropdown-item" href="#">Advanced</a></li>
+              <li><a class="dropdown-item" href="#">Ultimate</a></li>
+
+            </ul>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="Business.html">Business</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="Contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="Over Ons.html">Over Ons</a></li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+  <!-- Thuis Layout -->
+  <div id="home" class="layout home-layout active">
+    <div class="header">
+    </div>
+
+    <main class="container py-5">
+     <div class="row align-items-center">
+      <div class="container mt-5 pt-5">
+  <div class="row align-items-center">
+    <!-- Left: Image -->
+    <div class="col-md-5 text-center mb-4 mb-md-0">
+      <img src="Assets/SafeHaven Logo NoBG.png" alt="SafeHaven Logo" class="img-fluid rounded shadow" style="max-height: 300px;">
+    </div>
+
+    <!-- Right: Text content -->
+    <div class="col-md-7">
+      <h1 class="mb-3">🛡️ Welcome to SafeHaven 🛡️</h1>
+      <h4 class="mb-3">Smart protection for your digital life.</h4>
+      <p>Stay safe from viruses, malware, and online threats — wherever you are. SafeHaven offers real-time security, fast scans, and a clean, user-friendly design with zero slowdowns.</p>
+      <ul class="list-unstyled">
+        <li>✔️ Real-time threat detection</li>
+        <li>✔️ Lightning-fast scans</li>
+        <li>✔️ No slowdowns or interruptions</li>
+        <li>✔️ Simple, clean user interface</li>
+        <li>🔗<a href="#" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-0-hover">... en meer</a></li>
+      </ul>
+    </div>
+  </div>
+   </div>
+</div>
+</main>
+
+
+
+  <section class="py-5 px-4 bg-light">
+    <div class="container py-5">
+  <div class="box text-center p-4 rounded border">
+    <h3>Wat voor soort gebruiker ben je?</h3>
+    <p>Kies een van de onderstaande opties:</p>
+    <div class="buttons">
+      <button onclick="switchLayout('home')" class="btn btn-primary mx-2">Consument</button>
+      <button onclick="switchLayout('business')" class="btn btn-secondary mx-2">Business</button>
+    </div>
+
+
+  </div>
+</div>
+  </section>
+
+
+
+<div id="home-content" class="layout-content">
+<!------------------------------------------------------------------->
+
+
+
+
+
+  <div class="pro-box mx-auto my-5 p-4 rounded">
+
+    <div class="row g-0 align-items-center">
+      
+      <!-- Left: Carousel -->
+      <div class="col-md-5 border rounded">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="Assets/SafeHaven Logo NoBG.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Text content -->
+      <div class="col-md-6 p-5">
+        <h1 class="mb-3">SafeHaven PRO</h1>
+        <h4 class="mb-3">Krachtige beveiliging voor jou en je gezin zonder probleem</h4>
+        <ul class="list-unstyled">
+          <li>⭐ Realtime virusscan</li>
+          <li>⭐ Bescherming voor meerdere apparaten</li>
+          <li>⭐ VPN-toegang</li>
+          <li>⭐ Wachtwoordmanager</li>
+          <li>⭐ Prioriteit bij support</li>
+          <li>🔗<a href="#" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-0-hover">Extra Functies</a></li>
+          <button class="btn btn-primary w-50" style="margin-left: 0px;padding-top: 10px;">Nu Kopen</button>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="row">
+
+
+    <!-- Right: Dropdown and text -->
+ 
+
+
+
+  
+
+ </div>
+
+  <section class="py-5 px-4 bg-light">
+ <div class="container py-5">
+    <div class="feature-box-container">
+      <!-- Box 1 -->
+      <div class="col-md-2">
+        <div class="feature-box">
+          <i class="bi bi-shield-lock"></i>
+          <h5>Beveiliging</h5>
+          <p>Real-time detectie van dreigingen en bescherming tegen online bedreigingen.</p>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="col-md-2">
+        <div class="feature-box">
+          <i class="bi bi-lightning-charge"></i>
+          <h5>Snelheid</h5>
+          <p>Snelle en lichte scans die je geen vertraging of onderbrekingen bezorgen.</p>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="col-md-2">
+        <div class="feature-box">
+          <i class="bi bi-phone"></i>
+          <h5>Meerdere apparaten</h5>
+          <p>Bescherming voor al je apparaten.</p>
+        </div>
+      </div>
+
+      <!-- Box 4 -->
+      <div class="col-md-2">
+        <div class="feature-box">
+          <i class="bi bi-cloud"></i>
+          <h5>Cloud Backup</h5>
+          <p>Veilige cloud back-up en gemakkelijke gegevensherstel, altijd en overal toegankelijk.</p>
+        </div>
+      </div>
+
+      <!-- Box 5 -->
+      <div class="col-md-2">
+        <div class="feature-box">
+          <i class="bi bi-headset"></i>
+          <h5>Klantenservice</h5>
+          <p>Altijd bereikbare klantenservice, 24/7, wanneer je maar hulp nodig hebt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+  <section class="py-5 px-4">
+
+     <div class="container py-4">
+    <div class="row align-items-center">
+      <!-- Left: Image -->
+      <div class="col-md-6 text-center">
+        <img id="fadeImage" src="Assets/SafeHaven Logo NoBG.png" class="img-fluid rounded shadow" alt="Slideshow" style="max-height: 300px;">
+      </div>
+
+      <!-- Right: Dropdown and Info -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+  <div class="w-100 text-center" style="max-width: 100%;">
+    <select id="productSelect" class="form-select mb-3">
+      <option value="FreeTrial">Gratis Proefversie</option>
+      <option value="Standaard">Standaard</option>
+      <option value="Premium">Premium</option>
+      <option value="Advanced">Advanced</option>
+      <option value="Ultimate">Ultimate</option>
+    </select>
+
+    <div id="productInfo" class="border rounded p-3 bg-light mb-3">
+      <h4>SafeHaven</h4>
+      <p>SafeHaven biedt bescherming tegen virussen, malware en online dreigingen. Met real-time virusscans en ransomware-bescherming zorgt SafeHaven voor een veilige online ervaring.</p>
+    </div>
+
+    <button id="extraProductButton" class="btn btn-primary w-100" style="margin-left: 0px;">See Features</button>
+  </div>
+</div>
+    </div>
+  </div>
+
+  </section>
+
+
+
+  <section class="py-5 px-4">
+
+  </section>
+  
+  <section class="py-5 px-4 bg-light">
+
+  </section>
+
+ <!----------------------------------------------------------------->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">© 2025 Thuisbedrijf</div>
+  </div>
+
+  <!-- Zakelijke Layout -->
+  <div id="business" class="layout business-layout">
+
+    <div class="header">
+    </div>
+    <div class="content">
+      <h1>Welkom bij ons bedrijf</h1>
+      <p>Professioneel en doelgericht.</p>
+    </div>
+
+    <div class="footer">© 2025 Zakelijk BV</div>
+
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  <script>
+
+
+    function switchLayout(type) {
+  // Hide all layout-content sections
+  document.querySelectorAll('.layout-content').forEach(function(content) {
+    content.style.display = 'none';
+  });
+
+  // Show the selected section
+  document.getElementById(type + '-content').style.display = 'block';
+}
+   const productData = {
+      FreeTrial: {
+        title: "Gratis Proefversie",
+        description: "Probeer SafeHaven gratis uit met basisbescherming voor één apparaat. Inclusief realtime virusscan, maximaal 1,5 uur gebruik per dag, tot 7 dagen lang. Perfect om onze software te verkennen.",
+        image: "Assets/SafeHaven Logo NoBG.png",
+        button: "Bekijk gratis proefversie "
+      },
+      Standaard: {
+        title: "Standaard",
+        description: "Essentiële bescherming voor dagelijks gebruik. Beveilig tot 3 apparaten met realtime virusscans en zorg voor een veilige digitale omgeving zonder vertraging.",
+        image: "Assets/SafeHaven Logo NoBG.png",
+        button: "Bekijk Standaard"
+      },
+      Premium: {
+        title: "Premium",
+        description: "Uitgebreide beveiliging voor meerdere apparaten. Inclusief firewall, bescherming tegen ransomware en ondersteuning op verschillende platforms — ideaal voor gezinnen of intensief gebruik.",
+        image: "Assets/SafeHaven Logo NoBG.png",
+        button: "Bekijk Premium"
+      },
+      Advanced: {
+        title: "Advanced",
+        description: "Geavanceerde bescherming voor gezinnen en kleine teams. Inclusief real-time scans, firewall, ransomwarebescherming en ondersteuning voor 15 apparaten — krachtig én flexibel.",
+        image: "Assets/SafeHaven Logo NoBG.png",
+        button: "Bekijk Advanced"
+      },
+      Ultimate: {
+        title: "Ultimate",
+        description: "Complete beveiligingsoplossing voor het hele huishouden. Beschermt een onbeperkt aantal apparaten met krachtige functies zoals firewall, ransomware-bescherming en malwareblokkering — overal en altijd veilig.",
+        image: "Assets/SafeHaven Logo NoBG.png",
+        button: "Bekijk Ultimate"
+      },
+    };
+
+    const select = document.getElementById('productSelect');
+    const infoBox = document.getElementById('productInfo');
+    const extraButton = document.getElementById("extraProductButton");
+    const image = document.getElementById('fadeImage');
+
+    select.addEventListener('change', () => {
+      const selected = select.value;
+      const data = productData[selected];
+
+      // Update text
+      infoBox.querySelector('h4').textContent = data.title;
+      infoBox.querySelector('p').textContent = data.description;
+
+      // Fade transition for image
+      image.classList.add('opacity-0');
+      setTimeout(() => {
+        image.src = data.image;
+        image.classList.remove('opacity-0');
+      }, 200);
+
+      
+    });
+  </script>
+
+</body>
+</html>
